@@ -23,11 +23,11 @@ const MortgageDetails = () => {
       </div>
       <div className='paymentRightDiv'>
         <p>Loan Amount</p>
-        <p>{loanAmount}</p>
+        <p>${loanAmount}</p>
         <p>Down Payment</p>
-        <p>{downPaymentMortgage}</p>
+        <p>${downPaymentMortgage}</p>
         <p>Total</p>
-        <p>{parseFloat(loanAmount) - parseFloat(downPaymentMortgage)}</p>
+        <p>${parseFloat(loanAmount) - parseFloat(downPaymentMortgage)}</p>
       </div>
     </div>
   );
