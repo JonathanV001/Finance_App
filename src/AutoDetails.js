@@ -48,11 +48,11 @@ const AutoDetails = () => {
         <h1>{isNaN(monthlyPayment) ? 'Please fill form' : "$" + monthlyPayment}</h1>
       </div>
       <div className='paymentRightDiv'>
-        <p>Vehicle Budget</p><p>${vehiclePrice}</p>
-        <p>Down Payment</p><p>${downPayment}</p>
-        <p>Trade-In Value</p><p>${tradeInValue}</p>
+        <p>Vehicle Budget</p><p className='colorGreen'>${vehiclePrice}</p>
+        <p>Down Payment</p><p className='colorGreen'>${downPayment}</p>
+        <p>Trade-In Value</p><p className='colorGreen'>${tradeInValue}</p>
         <p>Estimated tax, title and registration</p><p>${estimatedFees}</p>
-        <p>Total</p><p>${total}</p>
+        <p>Total</p><p className='colorGreen'>${total}</p>
       </div>
     </div>
   );

@@ -1,7 +1,6 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "https://JonathanV001.github.io/Finance_App",
   "private": true,
   "dependencies": {
     "easy-peasy": "^6.0.4",
@@ -35,8 +34,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages": "^6.1.1"
   }
 }

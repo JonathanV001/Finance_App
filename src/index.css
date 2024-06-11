@@ -28,14 +28,14 @@ code {
   height: 50%;
   margin: 2em;
   border: 2px solid black;
+  background-color:rgb(163, 200, 255);
   align-items: center;
 }
 
 .form input{
   width: 100%;
   height: 70%;
-  background-color: rgb(200, 200, 200);
-  border: none;
+  border: 2px solid rgb(200,200,200);
   justify-self: center;
 }
 
@@ -77,13 +77,13 @@ code {
 .nav{
   width: 70%;
   height: 54px;
-  border: 2px solid black;
+  border: 2px solid rgb(135, 183, 255);
 }
 
 .navButtonBlack{
   width: 50%;
   text-align: center;
-  background-color: black;
+  background-color: rgb(135, 183, 255);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -127,6 +127,7 @@ code {
 
 .paymentLeftDiv h1{
   font-size: clamp(1.1rem, 2vh, 2rem);
+  color: rgb(245, 90, 90);
 }
 
 .paymentRightDiv{
@@ -139,6 +140,10 @@ code {
 
 .paymentRightDiv p{
   justify-self: center;
+}
+
+.colorGreen{
+  color: rgb(0, 100, 0);
 }
 
 @media (max-width: 800px) {
