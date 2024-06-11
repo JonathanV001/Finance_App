@@ -1,24 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import Nav from './Nav';
+import AutoForm from './AutoForm';
+import AutoDetails from './AutoDetails';
+import MortgageForm from './MortgageForm';
+import MortgageDetails from './MortgageDetails';
+import { Routes, Route } from 'react-router-dom';
+import { DataProvider } from './context/DataContext';
 
 function App() {
   return (
+    <DataProvider>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+          <Nav />
+          <Routes>
+            {/* maybe route to '/' */}
+            <Route path = '/' element={<div className='formAndDetailsContainer'><AutoForm/><AutoDetails/></div>}/>
+            <Route path = '/mortgage' element={<div className='formAndDetailsContainer'><MortgageForm /><MortgageDetails /></div>} />
+          </Routes>
     </div>
+    </DataProvider>
   );
 }
 
