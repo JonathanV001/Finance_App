@@ -34,10 +34,10 @@ const Nav = () => {
   return (
     <div className='nav'>
         <div className={class1} onClick={toggle0}>
-            <Link to='/' className='linkTag'> <p className={text1}>Auto</p> </Link>
+            <Link to='#/' className='linkTag'> <p className={text1}>Auto</p> </Link>
         </div>
         <div className={class2} onClick={toggle1}>
-            <Link to='/mortgage' className='linkTag'><p className={text2}>Mortgage</p></Link>
+            <Link to='#/mortgage' className='linkTag'><p className={text2}>Mortgage</p></Link>
         </div>
     </div>
   );
