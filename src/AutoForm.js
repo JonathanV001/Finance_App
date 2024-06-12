@@ -21,7 +21,7 @@ const AutoForm = () => {
       <label htmlFor='creditScore'>Credit Score</label>
       <select id ="creditScore" onChange={(e) => setApr(e.target[e.target.selectedIndex].value)}>
         <option value='.0685'>Excellent (720-850)</option>
-        <option value='.0685' >Good (660-719)</option>
+        <option value='.0909' >Good (660-719)</option>
         <option value='.1238'>Average (600-659)</option>
         <option value='.1646'>Below Average (300-599)</option>
       </select>
