@@ -37,7 +37,7 @@ const Nav = () => {
             <Link to='/' className='linkTag'> <p className={text1}>Auto</p> </Link>
         </div>
         <div className={class2} onClick={toggle1}>
-            <Link to='/mortgage' className='linkTag'><p className={text2}>Mortgage</p></Link>
+        <Link to='/mortgage' className='linkTag'><p className={text2}>Mortgage</p></Link>
         </div>
     </div>
   );

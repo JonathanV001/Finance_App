@@ -3,6 +3,7 @@
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
   font-size: clamp(1rem, 2vh, 1.2rem);
+  color: #0A0908
 }
 
 body {
@@ -27,21 +28,30 @@ code {
   width: 100%;
   height: 50%;
   margin: 2em;
-  border: 2px solid black;
-  background-color:rgb(163, 200, 255);
+  /*border: 2px solid black;*/
+  border: 2px solid #22333B;
+  /*background-color:rgb(163, 200, 255);*/
+  background-color: #EAE0D5;
   align-items: center;
 }
 
 .form input{
   width: 100%;
   height: 70%;
-  border: 2px solid rgb(200,200,200);
+  /*border: 2px solid rgb(200,200,200);*/
+  border: 2px solid #22333B;
   justify-self: center;
+}
+
+.form input:focus{
+  background-color: #C6AC8E;
+  border: 2px solid #5E503F;
 }
 
 .form select{
   width: 100%;
   height: 70%;
+  border: 2px solid #22333B;
 }
 
 .form label{
@@ -61,6 +71,7 @@ code {
   width: 50vw;
   height: 100vh;
   max-height: 100vh;
+  min-height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -77,16 +88,15 @@ code {
 .nav{
   width: 70%;
   height: 54px;
-  border: 2px solid rgb(135, 183, 255);
+  /*border: 2px solid rgb(135, 183, 255);*/
+border: 2px solid #5E503F;
 }
 
 .navButtonBlack{
   width: 50%;
   text-align: center;
-  background-color: rgb(135, 183, 255);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  /*background-color: rgb(135, 183, 255);*/
+  background-color: #C6AC8E;
 }
 
 .whiteText{
@@ -101,13 +111,16 @@ code {
   width: 50%;
   text-align: center;
   background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .linkTag{
   text-decoration: none;
+  flex-grow: 1;
+  display: block;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .paymentDisplay{
@@ -127,7 +140,8 @@ code {
 
 .paymentLeftDiv h1{
   font-size: clamp(1.1rem, 2vh, 2rem);
-  color: rgb(245, 90, 90);
+  /*color: rgb(245, 90, 90);*/
+  color: #22333B;
 }
 
 .paymentRightDiv{
@@ -136,6 +150,7 @@ code {
   grid-template-columns: 45% 45%;
   grid-gap:1em 10%;
   text-align: center;
+  margin-bottom: 2em
 }
 
 .paymentRightDiv p{
@@ -143,7 +158,7 @@ code {
 }
 
 .colorGreen{
-  color: rgb(0, 100, 0);
+  /*color: rgb(0, 100, 0);*/
 }
 
 @media (max-width: 800px) {

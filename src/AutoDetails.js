@@ -27,7 +27,6 @@ const AutoDetails = () => {
   /*montlhy payment effect*/
   useEffect(() => {
 
-
     let principle = parseFloat(total) - parseFloat(estimatedFees);
 
     let monthlyApr = apr / 12;
