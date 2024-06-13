@@ -8,13 +8,13 @@ const Nav = () => {
     setText2 } = useContext(paymentContext);
 
   useEffect(() => {
-    if(toggle == '0'){
+    if(toggle === '0'){
         setClass1("navButtonBlack");
         setClass2("navButtonWhite");
 
         setText1("whiteText");
         setText2("blackText");
-    }else if(toggle == '1'){
+    }else if(toggle === '1'){
       setClass1("navButtonWhite");
       setClass2("navButtonBlack");
 

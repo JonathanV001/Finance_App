@@ -26,14 +26,14 @@ const MortgageForm = () => {
     <div className='form'>
       <label htmlFor='loanAmount'>Loan Amount</label>
       <input type='number' id='loanAmount' placeholder = '0' onKeyUp={(e) => checkInputRange(e)}
-      onChange={(e) => e.target.value == '' ? setLoanAmount('0') : 
+      onChange={(e) => e.target.value === '' ? setLoanAmount('0') : 
         parseFloat(e.target.value) > 1000000000 ? setLoanAmount("1000000000") :
         parseFloat(e.target.value) < 0 ? setLoanAmount("0"):
         setLoanAmount(e.target.value)}/>
 
       <label htmlFor='downPayment'>Down Payment</label>
       <input type='number' id='downPayment' placeholder = '0' onKeyUp={(e) => checkInputRange(e)}
-      onChange={(e) => e.target.value == '' ? setDownPaymentMortgage('0') : 
+      onChange={(e) => e.target.value === '' ? setDownPaymentMortgage('0') : 
         parseFloat(e.target.value) > 1000000000 ? setDownPaymentMortgage("1000000000") :
         parseFloat(e.target.value) < 0 ? setDownPaymentMortgage("0"):
         setDownPaymentMortgage(e.target.value)}/>
@@ -47,7 +47,7 @@ const MortgageForm = () => {
 
       <label htmlFor='interest'>Interest %</label>
       <input type='number' id='interest' placeholder='0' onKeyUp={(e) => checkInputRangeInterest(e)}
-      onChange={(e) => e.target.value == '' ? setInterest('0') : 
+      onChange={(e) => e.target.value === '' ? setInterest('0') : 
         parseFloat(e.target.value) > 100 ? setInterest("100") :
         parseFloat(e.target.value) < 0 ? setInterest("0"):
         setInterest(e.target.value)}/>

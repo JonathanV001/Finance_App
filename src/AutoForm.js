@@ -20,21 +20,21 @@ const AutoForm = () => {
     <div className='form'>
       <label htmlFor='vehiclePrice'>Vehicle Price</label>
       <input type='number' id ="vehiclePrice" placeholder="0" onKeyUp={(e) => checkInputRange(e)}
-      onChange={(e) => e.target.value == '' ? setVehiclePrice('0') : 
+      onChange={(e) => e.target.value === '' ? setVehiclePrice('0') : 
         parseFloat(e.target.value) > 1000000 ? setVehiclePrice("1000000") :
         parseFloat(e.target.value) < 0 ? setVehiclePrice("0"):
         setVehiclePrice(e.target.value)}/>
 
       <label htmlFor='downPayment'>Down Payment</label>
       <input type='number' id ="downPayment" placeholder="0" onKeyUp={(e) => checkInputRange(e)}
-      onChange={(e) => e.target.value == '' ? setDownPayment('0') : 
+      onChange={(e) => e.target.value === '' ? setDownPayment('0') : 
         parseFloat(e.target.value) > 1000000 ? setDownPayment("1000000") :
         parseFloat(e.target.value) < 0 ? setDownPayment("0"):
         setDownPayment(e.target.value)}/>
 
       <label htmlFor='tradeInValue'>Trade-In Value</label>
       <input type='number' id ="tradeInValue" placeholder="0" onKeyUp={(e) => checkInputRange(e)}
-      onChange={(e) => e.target.value == '' ? setTradeInValue('0') : 
+      onChange={(e) => e.target.value === '' ? setTradeInValue('0') : 
         parseFloat(e.target.value) > 1000000 ? setTradeInValue("1000000") :
         parseFloat(e.target.value) < 0 ? setTradeInValue("0"):
         setTradeInValue(e.target.value)}/>
