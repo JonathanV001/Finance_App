@@ -50,6 +50,11 @@ code {
 .form input:focus{
   background-color: #C6AC8E;
   border: 2px solid #5E503F;
+  outline: none;
+}
+
+.form input:focus:invalid{
+   border: 2px solid red;
 }
 
 .form select{
