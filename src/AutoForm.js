@@ -3,9 +3,11 @@ import { useContext } from 'react';
 import paymentContext from './context/DataContext'
 
 const AutoForm = () => {
-  const { setVehiclePrice,
-          setDownPayment, setTradeInValue,
-          setApr,setLoanTerm } = useContext(paymentContext);
+  const { setVehiclePrice, setDownPayment, setTradeInValue,
+          setApr,setLoanTerm,
+        
+          vehiclePrice, downPayment, tradeInValue,
+          loanTerm, apr} = useContext(paymentContext);
 
   const checkInputRange = (e) => {
     if(e.target.value > 1000000){
@@ -20,28 +22,31 @@ const AutoForm = () => {
     <div className='form'>
       <label htmlFor='vehiclePrice'>Vehicle Price</label>
       <input type='number' id ="vehiclePrice" placeholder="0" onKeyUp={(e) => checkInputRange(e)}
-      onChange={(e) => e.target.value === '' ? setVehiclePrice('0') : 
+      onChange={(e) => 
         parseFloat(e.target.value) > 1000000 ? setVehiclePrice("1000000") :
         parseFloat(e.target.value) < 0 ? setVehiclePrice("0"):
-        setVehiclePrice(e.target.value)}/>
+        setVehiclePrice(e.target.value)}
+        value={vehiclePrice} required/>
 
       <label htmlFor='downPayment'>Down Payment</label>
       <input type='number' id ="downPayment" placeholder="0" onKeyUp={(e) => checkInputRange(e)}
-      onChange={(e) => e.target.value === '' ? setDownPayment('0') : 
+      onChange={(e) => 
         parseFloat(e.target.value) > 1000000 ? setDownPayment("1000000") :
         parseFloat(e.target.value) < 0 ? setDownPayment("0"):
-        setDownPayment(e.target.value)}/>
+        setDownPayment(e.target.value)}
+        value={downPayment} required/>
 
       <label htmlFor='tradeInValue'>Trade-In Value</label>
       <input type='number' id ="tradeInValue" placeholder="0" onKeyUp={(e) => checkInputRange(e)}
-      onChange={(e) => e.target.value === '' ? setTradeInValue('0') : 
+      onChange={(e) => 
         parseFloat(e.target.value) > 1000000 ? setTradeInValue("1000000") :
         parseFloat(e.target.value) < 0 ? setTradeInValue("0"):
-        setTradeInValue(e.target.value)}/>
+        setTradeInValue(e.target.value)}
+        value={tradeInValue} required/>
 
       {/* Fix undefined bug for select */}
       <label htmlFor='creditScore'>Credit Score</label>
-      <select id ="creditScore" onChange={(e) => setApr(e.target[e.target.selectedIndex].value)}>
+      <select id ="creditScore" onChange={(e) => setApr(e.target[e.target.selectedIndex].value)} value={apr}>
         <option value='.0685'>Excellent (720-850)</option>
         <option value='.0909' >Good (660-719)</option>
         <option value='.1238'>Average (600-659)</option>
@@ -49,7 +54,7 @@ const AutoForm = () => {
       </select>
 
       <label htmlFor='loanTerm'>Loan Term</label>
-      <select id ="loanTerm" onChange={(e) => setLoanTerm(e.target[e.target.selectedIndex].value)}>
+      <select id ="loanTerm" onChange={(e) => setLoanTerm(e.target[e.target.selectedIndex].value)} value={loanTerm}>
         {/* default optrion is none but program needs to set options at load */}
         <option value = '72'>72 Months</option>
         <option value='60'>60 Months</option>

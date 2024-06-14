@@ -51,7 +51,7 @@ const AutoDetails = () => {
         <p>Down Payment</p><p className='colorGreen'>${downPayment}</p>
         <p>Trade-In Value</p><p className='colorGreen'>${tradeInValue}</p>
         <p>Estimated tax, title and registration</p><p>${estimatedFees}</p>
-        <p>Total</p><p className='colorGreen'>${total}</p>
+        <p>Total</p><p className='colorGreen'>{isNaN(total) ? 'Please fill form' : "$" + total}</p>
       </div>
     </div>
   );

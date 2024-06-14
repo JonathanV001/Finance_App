@@ -27,7 +27,8 @@ const MortgageDetails = () => {
         <p>Down Payment</p>
         <p className='colorGreen'>${downPaymentMortgage}</p>
         <p>Total</p>
-        <p className='colorGreen'>${parseFloat(loanAmount) - parseFloat(downPaymentMortgage)}</p>
+        <p className='colorGreen'>{isNaN(parseFloat(loanAmount) - parseFloat(downPaymentMortgage)) ? 
+        "Please fill form" : "$" + (parseFloat(loanAmount) - parseFloat(downPaymentMortgage))}</p>
       </div>
     </div>
   );
