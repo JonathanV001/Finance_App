@@ -1,7 +1,7 @@
 # Getting Started with Finance_App
 Copy "git clone https://github.com/JonathanV001/Finance_App.git" to terminal in VS code to clone the repository
 OR
-go to link "https://666ba0dd56e42700085ea05f--velvety-phoenix-8a20e6.netlify.app/"
+go to link "https://667afd364506130008d6263b--velvety-phoenix-8a20e6.netlify.app/"
 
 ### `npm install`
 
