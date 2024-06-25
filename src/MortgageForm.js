@@ -7,37 +7,32 @@ const MortgageForm = () => {
         setLoanTermMortgage, setDownPaymentMortgage, loanAmount, 
         downPaymentMortgage, interest, loanTermMortgage} = useContext(paymentContext);
 
-    const checkInputRange = (e) => {
-    if(e.target.value > 1000000000){
-      e.target.value = 1000000000;
-    }else if(e.target.value < 0){
-      e.target.value = "";
+    //remove , from number and prevent non numbers
+  const parseNumber = (number) => {
+    let newNumber = number.toString().replace(/,/gi, "");
+    if(isNaN(parseFloat(newNumber))){
+      return 0;
+    }else{
+    newNumber = parseFloat(newNumber)
     }
+    return newNumber
   }
-
-    const checkInputRangeInterest = (e) => {
-      if(e.target.value > 100){
-        e.target.value = 100;
-      }else if(e.target.value < 0){
-        e.target.value = "";
-      }
-    }
 
   return (
     <div className='form'>
       <label htmlFor='loanAmount'>Loan Amount</label>
-      <input type='number' id='loanAmount' placeholder = '0' onKeyUp={(e) => checkInputRange(e)}
+      <input type='text' id='loanAmount' placeholder = '0' autoComplete='off'
       onChange={(e) => 
-        parseFloat(e.target.value) > 1000000000 ? setLoanAmount("1000000000") :
-        parseFloat(e.target.value) < 0 ? setLoanAmount("0"):
-        setLoanAmount(e.target.value)} value={loanAmount} required/>
+        parseNumber(e.target.value) > 1000000000 ? setLoanAmount("1,000,000,000") :
+        parseNumber(e.target.value) < 0 ? setLoanAmount("0"):
+        setLoanAmount(parseNumber(e.target.value).toLocaleString())} value={loanAmount} required/>
 
       <label htmlFor='downPayment'>Down Payment</label>
-      <input type='number' id='downPayment' placeholder = '0' onKeyUp={(e) => checkInputRange(e)}
+      <input type='text' id='downPayment' placeholder = '0' autoComplete='off'
       onChange={(e) => 
-        parseFloat(e.target.value) > 1000000000 ? setDownPaymentMortgage("1000000000") :
-        parseFloat(e.target.value) < 0 ? setDownPaymentMortgage("0"):
-        setDownPaymentMortgage(e.target.value)}
+        parseNumber(e.target.value) > 1000000000 ? setDownPaymentMortgage("1,000,000,000") :
+        parseNumber(e.target.value) < 0 ? setDownPaymentMortgage("0"):
+        setDownPaymentMortgage(parseNumber(e.target.value).toLocaleString())}
         value={downPaymentMortgage} required/>
 
       <label htmlFor='term'>Term</label>
@@ -48,11 +43,11 @@ const MortgageForm = () => {
       </select>
 
       <label htmlFor='interest'>Interest %</label>
-      <input type='number' id='interest' placeholder='0' onKeyUp={(e) => checkInputRangeInterest(e)}
+      <input type='text' id='interest' placeholder='0' autoComplete='off'
       onChange={(e) => 
-        parseFloat(e.target.value) > 100 ? setInterest("100") :
-        parseFloat(e.target.value) < 0 ? setInterest("0"):
-        setInterest(e.target.value)}
+        parseNumber(e.target.value) > 100 ? setInterest("100") :
+        parseNumber(e.target.value) < 0 ? setInterest("0"):
+        setInterest(parseNumber(e.target.value).toLocaleString())}
         value={interest} required/>
     </div>
   );

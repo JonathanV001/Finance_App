@@ -2,7 +2,7 @@ import React from "react";
 
 const AutoInformation = () => {
   return (
-    <div class="informationContainer">
+    <div className="informationContainer">
       <h1>What Is a Car Loan?</h1>
       <p>
         An auto loan is a loan used to borrow money from a lender and use that
