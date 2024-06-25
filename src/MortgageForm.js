@@ -47,7 +47,7 @@ const MortgageForm = () => {
       onChange={(e) => 
         parseNumber(e.target.value) > 100 ? setInterest("100") :
         parseNumber(e.target.value) < 0 ? setInterest("0"):
-        setInterest(parseNumber(e.target.value).toLocaleString())}
+        setInterest(e.target.value)}
         value={interest} required/>
     </div>
   );
